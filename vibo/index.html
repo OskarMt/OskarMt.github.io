@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vibo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+</head>
+<body>
+
+
+<!--SPRITE-->
+<svg style="display: none">
+    <symbol id="facebook" viewBox="0 0 24 24">
+        <g>
+            <path d="m15.997 3.985h2.191v-3.816c-.378-.052-1.678-.169-3.192-.169-3.159 0-5.323 1.987-5.323 5.639v3.361h-3.486v4.266h3.486v10.734h4.274v-10.733h3.345l.531-4.266h-3.877v-2.939c.001-1.233.333-2.077 2.051-2.077z"/>
+        </g>
+    </symbol>
+
+     <symbol id="twitter"  viewBox="0 0 512 512">
+         <g>
+        <path d="M512,97.248c-19.04,8.352-39.328,13.888-60.48,16.576c21.76-12.992,38.368-33.408,46.176-58.016
+            c-20.288,12.096-42.688,20.64-66.56,25.408C411.872,60.704,384.416,48,354.464,48c-58.112,0-104.896,47.168-104.896,104.992
+            c0,8.32,0.704,16.32,2.432,23.936c-87.264-4.256-164.48-46.08-216.352-109.792c-9.056,15.712-14.368,33.696-14.368,53.056
+            c0,36.352,18.72,68.576,46.624,87.232c-16.864-0.32-33.408-5.216-47.424-12.928c0,0.32,0,0.736,0,1.152
+            c0,51.008,36.384,93.376,84.096,103.136c-8.544,2.336-17.856,3.456-27.52,3.456c-6.72,0-13.504-0.384-19.872-1.792
+            c13.6,41.568,52.192,72.128,98.08,73.12c-35.712,27.936-81.056,44.768-130.144,44.768c-8.608,0-16.864-0.384-25.12-1.44
+            C46.496,446.88,101.6,464,161.024,464c193.152,0,298.752-160,298.752-298.688c0-4.64-0.16-9.12-0.384-13.568
+            C480.224,136.96,497.728,118.496,512,97.248z"/>
+        </g>
+    </symbol>
+
+    <symbol id="google" viewBox="0 0 512 512">
+        <g>
+            <path  d="M270.829,267.947c-10.069-7.339-25.28-18.411-25.472-22.656c0-6.037,13.781-19.712,24.853-30.677
+                c25.515-25.323,60.48-59.989,60.48-107.947c0.573-35.74-19.044-68.751-50.709-85.333h50.709c5.891,0,10.667-4.776,10.667-10.667
+                S336.581,0,330.69,0H192.023c-9.238,0.031-18.456,0.887-27.541,2.56C206.957-5.909,251.565,32,264.557,88.597l0,0
+                c13.291,57.323-10.88,111.936-53.867,121.963c-4.485,1.033-9.072,1.556-13.675,1.557c-38.635,0-76.437-36.267-88.299-87.467
+                C95.639,67.904,119.383,13.888,161.453,3.179C99.519,12.344,53.579,65.392,53.357,128c0,73.408,68.672,99.819,118.101,105.451
+                c-10.97,20.706-10.584,45.586,1.024,65.941C107.522,303.979,10.69,332.075,10.69,416c-0.764,22.599,7.871,44.503,23.851,60.501
+                C67.757,509.248,126.061,512,156.503,512c3.648,0,6.869,0,9.6,0h4.587c1.813,0,181.333-3.179,181.333-117.333
+                C352.023,327.104,303.17,291.52,270.829,267.947z M192.023,490.667c-54.123,0-117.333-22.336-117.333-85.333
+                s73.088-106.667,138.667-106.667c1.914,0.001,3.794,0.516,5.44,1.493c9.28,5.504,90.56,55.211,90.56,105.173
+                C309.357,456.32,248.685,490.667,192.023,490.667z"/>
+            <path  d="M426.69,298.667c-5.891,0-10.667-4.776-10.667-10.667V160c0-5.891,4.776-10.667,10.667-10.667
+                c5.891,0,10.667,4.776,10.667,10.667v128C437.357,293.891,432.581,298.667,426.69,298.667z"/>
+            <path d="M490.69,234.667h-128c-5.891,0-10.667-4.776-10.667-10.667c0-5.891,4.776-10.667,10.667-10.667h128
+                c5.891,0,10.667,4.776,10.667,10.667C501.357,229.891,496.581,234.667,490.69,234.667z"/>
+        </g>
+    </symbol>
+
+    <symbol id="youtube" viewBox="0 0 90.677 90.677">
+        <g>
+            <path d="M82.287,45.907c-0.937-4.071-4.267-7.074-8.275-7.521c-9.489-1.06-19.098-1.065-28.66-1.06
+                c-9.566-0.005-19.173,0-28.665,1.06c-4.006,0.448-7.334,3.451-8.27,7.521c-1.334,5.797-1.35,12.125-1.35,18.094
+                c0,5.969,0,12.296,1.334,18.093c0.936,4.07,4.264,7.073,8.272,7.521c9.49,1.061,19.097,1.065,28.662,1.061
+                c9.566,0.005,19.171,0,28.664-1.061c4.006-0.448,7.336-3.451,8.272-7.521c1.333-5.797,1.34-12.124,1.34-18.093
+                C83.61,58.031,83.62,51.704,82.287,45.907z M28.9,50.4h-5.54v29.438h-5.146V50.4h-5.439v-4.822H28.9V50.4z M42.877,79.839h-4.629
+                v-2.785c-1.839,2.108-3.585,3.136-5.286,3.136c-1.491,0-2.517-0.604-2.98-1.897c-0.252-0.772-0.408-1.994-0.408-3.796V54.311
+                h4.625v18.795c0,1.084,0,1.647,0.042,1.799c0.111,0.718,0.462,1.082,1.082,1.082c0.928,0,1.898-0.715,2.924-2.166v-19.51h4.629
+                L42.877,79.839L42.877,79.839z M60.45,72.177c0,2.361-0.159,4.062-0.468,5.144c-0.618,1.899-1.855,2.869-3.695,2.869
+                c-1.646,0-3.234-0.914-4.781-2.824v2.474h-4.625V45.578h4.625v11.189c1.494-1.839,3.08-2.769,4.781-2.769
+                c1.84,0,3.078,0.969,3.695,2.88c0.311,1.027,0.468,2.715,0.468,5.132V72.177z M77.907,67.918h-9.251v4.525
+                c0,2.363,0.773,3.543,2.363,3.543c1.139,0,1.802-0.619,2.066-1.855c0.043-0.251,0.104-1.279,0.104-3.134h4.719v0.675
+                c0,1.491-0.057,2.518-0.099,2.98c-0.155,1.024-0.519,1.953-1.08,2.771c-1.281,1.854-3.179,2.768-5.595,2.768
+                c-2.42,0-4.262-0.871-5.599-2.614c-0.981-1.278-1.485-3.29-1.485-6.003v-8.941c0-2.729,0.447-4.725,1.43-6.015
+                c1.336-1.747,3.177-2.617,5.54-2.617c2.321,0,4.161,0.87,5.457,2.617c0.969,1.29,1.432,3.286,1.432,6.015v5.285H77.907z"/>
+            <path d="M70.978,58.163c-1.546,0-2.321,1.181-2.321,3.541v2.362h4.625v-2.362C73.281,59.344,72.508,58.163,70.978,58.163z"/>
+            <path d="M53.812,58.163c-0.762,0-1.534,0.36-2.307,1.125v15.559c0.772,0.774,1.545,1.14,2.307,1.14
+                c1.334,0,2.012-1.14,2.012-3.445V61.646C55.824,59.344,55.146,58.163,53.812,58.163z"/>
+            <path d="M56.396,34.973c1.705,0,3.479-1.036,5.34-3.168v2.814h4.675V8.82h-4.675v19.718c-1.036,1.464-2.018,2.188-2.953,2.188
+                c-0.626,0-0.994-0.37-1.096-1.095c-0.057-0.153-0.057-0.722-0.057-1.817V8.82h-4.66v20.4c0,1.822,0.156,3.055,0.414,3.836
+                C53.854,34.363,54.891,34.973,56.396,34.973z"/>
+            <path d="M23.851,20.598v14.021h5.184V20.598L35.271,0h-5.242l-3.537,13.595L22.812,0h-5.455c1.093,3.209,2.23,6.434,3.323,9.646
+                C22.343,14.474,23.381,18.114,23.851,20.598z"/>
+            <path d="M42.219,34.973c2.342,0,4.162-0.881,5.453-2.641c0.981-1.291,1.451-3.325,1.451-6.067v-9.034
+                c0-2.758-0.469-4.774-1.451-6.077c-1.291-1.765-3.11-2.646-5.453-2.646c-2.33,0-4.149,0.881-5.443,2.646
+                c-0.993,1.303-1.463,3.319-1.463,6.077v9.034c0,2.742,0.47,4.776,1.463,6.067C38.069,34.092,39.889,34.973,42.219,34.973z
+                 M39.988,16.294c0-2.387,0.724-3.577,2.231-3.577c1.507,0,2.229,1.189,2.229,3.577v10.852c0,2.387-0.722,3.581-2.229,3.581
+                c-1.507,0-2.231-1.194-2.231-3.581V16.294z"/>
+            </g>
+    </symbol>
+    <symbol id="basket" viewBox="0 0 512 512">
+        <g>
+            <path d="M256,0C115.04,0,0,115.05,0,256c0,140.96,115.05,256,256,256c140.96,0,256-115.05,256-256C512,115.04,396.95,0,256,0z   M429.64,111.51c31.96,38.34,51.47,87.39,52.31,140.89c-40.06-9.37-84.55-10-129.86-1.74c-11.79,2.15-23.58,4.88-35.3,8.16  c-3.9-10.61-8.04-21.13-12.44-31.55c-4.49-10.63-9.23-21.08-14.19-31.38C344.15,175.27,402.65,144.57,429.64,111.51z M256,30  c58.82,0,112.45,22.59,152.7,59.54C393,110.95,348.26,142.12,276.48,169c-25.06-46.66-55.11-89.54-89.83-128.1  C208.51,33.83,231.82,30,256,30z M156.95,52.9c35.41,37.93,65.87,80.29,90.96,126.05c-74.68,24.17-150.29,34.03-212.46,27.66  C50.59,138.96,96.14,82.67,156.95,52.9z M30,256c0-6.64,0.31-13.21,0.87-19.7c13.72,1.45,28.03,2.18,42.82,2.18  c58.33,0,123.86-11.22,188.21-32.53c9.82,20.1,18.65,40.78,26.44,61.97c-25.09,9.02-49.51,20.49-72.44,34.14  c-56.22,33.47-97.35,76.53-114.41,118.71C57.52,379.51,30,320.91,30,256z M256,482c-48.29,0-93.09-15.23-129.86-41.14  c11.4-38.52,49.96-80.19,105.11-113.02c19.43-11.58,42.15-22.49,66.88-31.36c17.53,55.1,28.27,113.26,31.68,173.13  C306.67,477.63,281.84,482,256,482z M359.07,457.1c-4.16-58.32-15.02-115.1-32.45-169.64c48.6-13.36,102.58-17.84,153.77-4.56  C471.33,358.91,424.41,423.47,359.07,457.1z"/>
+        </g>
+    </symbol>
+
+
+</svg>
+
+
+
+<!--HEADER-->
+
+<header class="header" id="header">
+    <div class="container">
+        <div class="header-inner">
+            <img src="images/intro/Logo.png" alt="" class="header__logo">
+            <nav class="nav" id="nav">
+                <a href="#" class="nav__link" data-scroll="#header">Home</a>
+                <a href="#" class="nav__link" data-scroll="#features">About</a>
+                <a href="#" class="nav__link" data-scroll="#app">App</a>
+                <a href="#" class="nav__link" data-scroll="#info">Info</a>
+            </nav>
+            <div class="burger" onclick="showNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div><!--/HEADER-INNER-->
+    </div><!--/CONTAINER-->
+</header>
+
+
+<!--INTRO-->
+
+<section class="intro" id="intro">
+    <div class="container">
+        <div class="intro-inner">
+            <h1 class="intro__title">Choose a better way to represent your app</h1>
+            <p class="intro__subtitle">Vestibulum ac diam sit amet quam vehicula elementum.</p>
+            <div class="intro-btns">
+                <a href="#" class="intro__btn" target="_blank">Download Free</a>
+                <a href="#" class="intro__btn" target="_blank">Contact Us</a>
+            </div>
+            <img src="images/intro/intro-phone.png" alt="" class="intro__phone">
+        </div>
+    </div>
+</section>
+
+
+<!--FEATURES-->
+<section class="features" id="features">
+    <div class="container">
+        <div class="features-inner">
+            <img src="images/intro/intro-phone.png" alt="" class="features__phone">
+            <div class="features-items">
+                <div class="features-item">
+                    <img src="images/features/features-icon1.png" alt="" class="feature-item__icon">
+                    <h3 class="features-item__title">First 7 Days Free</h3>
+                    <p class="features-item__text">Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan tincidunt. Vestibulum ac diamdo.</p>
+                </div>
+                  <div class="features-item">
+                    <img src="images/features/features-icon2.png" alt="" class="feature-item__icon">
+                    <h3 class="features-item__title">Fully Support</h3>
+                    <p class="features-item__text">Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan tincidunt. Vestibulum ac diamdo.</p>
+                </div>
+                <div class="features-item">
+                    <img src="images/features/features-icon3.png" alt="" class="feature-item__icon">
+                    <h3 class="features-item__title">Modern Flat Design</h3>
+                    <p class="features-item__text">Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan tincidunt. Vestibulum ac diamdo.</p>
+                </div>
+                  <div class="features-item">
+                    <img src="images/features/features-icon4.png" alt="" class="feature-item__icon">
+                    <h3 class="features-item__title">User Friendly</h3>
+                    <p class="features-item__text">Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan tincidunt. Vestibulum ac diamdo.</p>
+                </div>
+            </div><!--/FEATURES-ITEMS-->
+        </div><!--FEATURES-INNER-->
+    </div><!--/CONTAINER-->
+</section>
+
+
+<!--SERVICES-->
+
+<section class="services">
+    <div class="container">
+        <div class="services-inner">
+            <div class="services-content">
+                <h2 class="services__title">Stable And Ready</h2>
+                <p class="services__text">Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur aliquet quam id dui posuere blandit. Curabitur aliquet quam id dui posuere blandit. Vestibulum ac diam sit amet quam.
+                </p>
+                <a href="#" class="services__btn" target="_blank">Download Free</a>
+            </div>
+            <div class="services-menu">
+                <div class="services-item">
+                    <div class="services-item__head">
+                        <img src="images/services/services-icon1.png" alt="" class="services-item__icon">
+                        <h3 class="services-item__title">Made With Love</h3>
+                    </div>
+                    <div class="services-item__content"><p>Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan tincidunt. Vestibulum ac diam.</p></div>
+                </div><!--/SERVICES-ITEM-->
+                <div class="services-item">
+                    <div class="services-item__head">
+                        <img src="images/services/services-icon2.png" alt="" class="services-item__icon">
+                        <h3 class="services-item__title">Free of Use</h3>
+                    </div>
+                    <div class="services-item__content"><p>Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan tincidunt. Vestibulum ac diam.</p></div>
+                </div><!--/SERVICES-ITEM-->
+                <div class="services-item">
+                    <div class="services-item__head">
+                        <img src="images/services/services-icon3.png" alt="" class="services-item__icon">
+                        <h3 class="services-item__title">Fully Support Avaliable</h3>
+                    </div>
+                    <div class="services-item__content"><p>Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan tincidunt. Vestibulum ac diam.</p></div>
+                </div><!--/SERVICES-ITEM-->
+                <div class="services-item">
+                    <div class="services-item__head">
+                        <img src="images/services/services-icon4.png" alt="" class="services-item__icon">
+                        <h3 class="services-item__title">Flat and Modern Ui & Ux</h3>
+                    </div>
+                    <div class="services-item__content"><p>Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan tincidunt. Vestibulum ac diam.</p></div>
+                </div><!--/SERVICES-ITEM-->
+            </div>
+        </div><!--/SERVICES-INNER-->
+        <div class="services-bottom">
+            <img src="images/services/services-code.png" alt="" class="services-botton__img">
+            <div class="services-bottom-content">
+                <h2 class="services__title">Everything You Need</h2>
+                <ul>
+                    <li><img src="images/services/services-icon5.png" alt="" class="services-bottom-content__img">Android</li>
+                    <li><img src="images/services/services-icon5.png" alt="" class="services-bottom-content__img">Iphone</li>
+                </ul>
+                <p class="services-bottom-content__text">Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur aliquet quam id dui posuere blandit. Curabitur aliquet quam id dui posuere blandit. Vestibulum ac diam sit amet quam.</p>
+            </div>
+        </div>
+    </div><!--/CONTAINER-->
+</section>
+
+
+
+<!--APP-->
+
+<section class="app" id="app">
+    <div class="container">
+        <div class="app-inner">
+            <img src="images/intro/intro-phone.png" class="app-inner__phone" alt="">
+            <div class="app-content">
+                <h2 class="app-content__title">Now Available</h2>
+                <p class="app-content__text">Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. quam vehicula elementum sed sit ametsuada.</p>
+                <div class="app-content-stores">
+                    <img src="images/app/appStore-icon.png"  alt="">
+                    <img src="images/app/googlePlay-icon.png" class="app-content-stores__google" alt="">
+                </div>
+            </div>
+        </div>
+        <a href="#" class="app__btn" target="_blank">get the app today</a>
+    </div>
+</section>
+
+
+<!--INFO-->
+
+<section class="info" id="info">
+    <div class="container">
+        <div class="info-inner">
+            <ul>
+                <li class="info-inner__title">Company</li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Jobs</a></li>
+                <li><a href="#">Press</a></li>
+            </ul>
+            <ul>
+                <li class="info-inner__title">Development</li>
+                <li><a href="#">IOS</a></li>
+                <li><a href="#">Androud</a></li>
+            </ul>
+            <ul>
+                <li class="info-inner__title">Community</li>
+                <li><a href="#">Social</a></li>
+                <li><a href="#">Forum</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+            <ul>
+                <li class="info-inner__title">Info</li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+        <div class="info-subscribe">
+            <div class="info-subscribe__title">Get In Touch</div>
+            <div class="info-subscribe__subtitle">Subscribe to our newsletter and get notification for upcoming cool sutff.</div>
+            <div class="info-subscribe-form">
+                <input type="text" class="info-subscribe__input">
+                <a href="#" class="info-subscribe__btn">Count Me In</a>
+            </div>
+        </div>
+    </div><!--/CONTAINER-->
+</section>
+
+
+<!--FOOTER-->
+
+<footer class="footer">
+    <p class="footer__copyright"> © 2018 - Appo,All Right Reserved</p>
+    <div class="footer-links">
+        <a href="#" target="_blank">
+            <svg class="footer__icon">
+                <use xlink:href="#facebook"></use>
+            </svg>
+        </a>
+        <a href="#" target="_blank">
+            <svg class="footer__icon">
+                <use xlink:href="#twitter"></use>
+            </svg>
+        </a>
+        <a href="#" target="_blank">
+            <svg class="footer__icon">
+                <use xlink:href="#basket"></use>
+            </svg>
+        </a>
+        <a href="#" target="_blank">
+            <svg class="footer__icon">
+                <use xlink:href="#google"></use>
+            </svg>
+        </a>
+        <a href="#" target="_blank">
+            <svg class="footer__icon">
+                <use xlink:href="#youtube"></use>
+            </svg>
+        </a>
+    </div>
+</footer>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,38 @@
+@mixin flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin fontSemiBold{
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+@mixin fontRegular{
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+@mixin fontBold{
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+@mixin btn{
+    text-decoration: none;
+    @include fontSemiBold;
+    color:$whiteColor;
+    padding: 15px 40px;
+    border-radius: 8px;
+}
+
+
+@mixin title{
+    @include fontBold;
+    color:$blueTextColor;
+    margin-bottom: 30px;
+}
