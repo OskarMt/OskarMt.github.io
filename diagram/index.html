@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diagramm</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!--SPRITE-->
+<svg style="display:none">
+    <symbol id="human" viewBox="0 0 15.59 16.31">
+        <g>
+            <path class="cls-1" d="M15.11,12.71a1.82,1.82,0,0,0-1-1.29l-2.81-1.29h0l-1.16-.88h0a.8.8,0,0,0-.19-.38l0,0V7.44a7.55,7.55,0,0,0,.72-1.32,1.7,1.7,0,0,0,.77-1.32c0-.69-.21-.85-.42-.86C11,3.47,11.24,0,7.71,0,3.92,0,4.46,4,4.46,4h0c-.2,0-.42.17-.38.8a1.76,1.76,0,0,0,.76,1.32,9.32,9.32,0,0,0,.72,1.32V8.89a.78.78,0,0,0-.19.36l-1.16.87v.05L1.5,11.42a1.81,1.81,0,0,0-1,1.29L0,15.15s.46,1.16,7.8,1.16,7.79-1.16,7.79-1.16Z"/>
+        </g>
+    </symbol>
+
+    <!--FLAG-->
+    <symbol id="flag" viewBox="-0.3 0 10.079204 12.329124">
+        <g
+             inkscape:label="Layer 1"
+             inkscape:groupmode="layer"
+             id="layer1"
+             transform="translate(-125.61635,-132.50946)">
+            <g
+               transform="matrix(0.35277777,0,0,-0.35277777,-41.706995,347.92403)"
+               id="g2612">
+              <g
+                 id="g2614" />
+              <g
+                 id="g2630">
+                <g
+                   clip-path="url(#clipPath2618)"
+                   id="g2628"
+                   style="opacity:1">
+                  <g
+                     transform="translate(475.4107,610.6243)"
+                     id="g2622">
+                    <path
+                       d="m 0,0 c -1.082,0 -1.959,-0.877 -1.959,-1.959 0,-0.277 0.059,-0.54 0.163,-0.778 0.179,-0.408 0.463,-1.249 0.463,-1.985 v -28.891 c 0,-0.736 0.596,-1.336 1.333,-1.336 0.736,0 1.336,0.6 1.336,1.336 v 28.891 c 0,0.736 0.283,1.577 0.459,1.985 0.105,0.238 0.163,0.501 0.163,0.778 C 1.961,-0.88 1.082,0 0,0"
+                       id="path2620"
+                       inkscape:connector-curvature="0" />
+                  </g>
+                  <g
+                     transform="translate(497.1518,596.9736)"
+                     id="g2626">
+                    <path
+                       d="M 0,0 C -0.27,-0.368 -0.267,-0.863 0.008,-1.198 1.473,-2.974 2.981,-4.431 4.405,-5.593 5.66,-6.618 4.024,-7.365 3.657,-7.521 c -7.47,-3.191 -14.934,3.485 -22.399,1.452 V 9.691 C -11.265,11.725 -3.789,5.02 3.688,8.252 4.053,8.408 4.386,8.37 4.547,8.124 4.707,7.88 4.667,7.46 4.444,7.049 2.963,4.333 1.481,2.031 0,0"
+                       id="path2624"
+                       inkscape:connector-curvature="0" />
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+    </symbol>
+</svg>
+<!--/SPRITE-->
+
+
+<div class="box">
+    <div class="percent">
+        <svg class="icon-flag">
+            <use xlink:href="#flag"></use>
+        </svg>
+        <img class="line" src="images/line.png" alt="">
+        <svg width="100%" height="100%" viewBox="0 0 34 34">
+          <circle cx="17" cy="17" r="15.91549430918954"  stroke="#ececec" stroke-dasharray="85 15" stroke-dashoffset="18"></circle>
+          <circle cx="17" cy="17" r="15.91549430918954"  stroke="#70a84b" stroke-dasharray="32 68" stroke-dashoffset="86"></circle>
+          <circle cx="17" cy="17" r="15.91549430918954"  stroke="#fcd329"  stroke-dasharray="31.6 68.4" stroke-dashoffset="18"></circle>
+        </svg><!--/DIAGRAMM-->
+        <div class="text">
+            <h2 class="percent__count">72.<span>7</span></h2>
+            <p class="title">Лояльность</p>
+            <p class="subtitle">ниже среднего</p>
+            <p class="description">по отрасли: FMCG<br>значений слева от медианы<br>52.0% - 83.1%</p>
+            <p class="changing"><span></span><span>3.1</span></p>
+        </div><!--/DIAGRAMM DESCRIPTION-->
+    </div>
+    <div class="statistics">
+        <div class="statistics-item">
+            <h3 class="statistics__title">Промоутеры</h3>
+            <div class="statistics-progressbar">
+                <div class="statistics-count">
+                   <h3 class="statistics__percent">32.0%</h3>
+                   <div class="statistics__count">81
+                        <svg class="icon">
+                            <use xlink:href="#human"></use>
+                        </svg>
+                   </div>
+                </div>
+                <div class="statistics__bar green">+1.2%</div>
+            </div>
+        </div><!--/STATISTICS-ITEM-->
+        <div class="statistics-item">
+            <h3 class="statistics__title">Скептики</h3>
+            <div class="statistics-progressbar">
+                <div class="statistics-count">
+                   <h3 class="statistics__percent">39.1%</h3>
+                   <div class="statistics__count">8
+                        <svg class="icon">
+                            <use xlink:href="#human"></use>
+                        </svg>
+                   </div>
+                </div>
+                <div class="statistics__bar yellow">+4.8%</div>
+            </div>
+        </div><!--/STATISTICS-ITEM-->
+        <div class="statistics-item">
+            <h3 class="statistics__title">Критики</h3>
+            <div class="statistics-progressbar">
+                <div class="statistics-count">
+                   <h3 class="statistics__percent">79.8%</h3>
+                   <div class="statistics__count">7
+                        <svg class="icon">
+                            <use xlink:href="#human"></use>
+                        </svg>
+                   </div>
+                </div>
+                <div class="statistics__bar red">-9.7%</div>
+            </div>
+        </div><!--/STATISTICS-ITEM-->
+    </div><!--/STATISTICS-->
+</div><!--/BOX-->
+
+
+
+
+
+</body>
+</html>
