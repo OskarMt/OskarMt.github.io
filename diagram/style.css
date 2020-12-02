@@ -34,6 +34,9 @@ h1,h2,h3,h4,h5,h6{
     display: flex;
     justify-content: center;
     margin-top: 20px;
+    opacity: 0;
+    animation: circle  1s ease-in-out;
+    animation-fill-mode: forwards;
 
 }
 
@@ -63,7 +66,6 @@ circle{
     fill:transparent;
     stroke-width:1.5;
 }
-
 
 .text{
     position: absolute;
@@ -144,6 +146,11 @@ circle{
     padding: 20px;
     width: 100%;
     padding-left: 50px;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: statistics  .8s ease-in-out;
+    animation-fill-mode: forwards;
+    animation-delay: .8s;
 }
 
 .statistics-item{
@@ -207,20 +214,27 @@ circle{
     position: absolute;
     top: 0;
     left: 0;
-    width: 32%;
+    max-width: 32%;
+    width: 0;
     height: 80%;
     background-color: #70a74b;
     border-top-left-radius: 5px;
+    animation: progressbar 1s ease-in-out;
+    animation-fill-mode: forwards;
+    animation-delay: 1.3s;
 }
 
 .statistics__bar.yellow:after{
     background-color: #fbd229;
-    width: 34%;
+    width: 0;
+    max-width: 34%;
+
 }
 
 .statistics__bar.red:after{
     background-color: #ed5243;
-    width: 25%;
+    width: 0;
+    max-width: 25%;
 }
 
 
@@ -246,6 +260,33 @@ circle{
 
 
 
+@keyframes statistics{
+    0{
+        opacity:0;
+        transform: translateY(10px);
+    }
+    100%{
+        opacity:1;
+        transform: translateY(0px);
+    }
 
+}
 
+@keyframes circle{
+    0{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
+}
+
+@keyframes progressbar{
+    0{
+        width: 0;
+    }
+    100%{
+        width: 40%;
+    }
+}
 
